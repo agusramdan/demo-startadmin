@@ -1,5 +1,8 @@
 # staradmin-demo
 
+![CI](https://github.com/agusramdan/demo-startadmin/actions/workflows/main.yml/badge.svg)
+
+
 Spring Boot with Thymeleaf and Star Admin 
 
 # staradmin-demo

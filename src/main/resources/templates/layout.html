@@ -39,7 +39,28 @@
             <!-- Main Content -->
             <div id="content" >
                 <div th:replace="fragments/header :: header"></div>
-                <div layout:fragment="content"></div>
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div layout:fragment="header"></div>
+
+                    <div class="alert alert-success alert-dismissible" th:if="${successFlash != null}">
+                        <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+                        <p th:text="${successFlash}"></p>
+                    </div>
+
+                    <div class="alert alert-danger alert-dismissible" th:if="${errorFlash != null}">
+                        <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+                        <p th:text="${errorFlash}"></p>
+                    </div>
+
+                    <div class="alert alert-info alert-dismissible" th:if="${infoFlash != null}">
+                        <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+                        <p th:text="${infoFlash}"></p>
+                    </div>
+
+                    <div layout:fragment="content"></div>
+                </div>
+                <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
 
@@ -88,14 +109,14 @@
     <!-- Custom scripts for all pages-->
     <script th:src="@{/js/sb-admin-2.min.js}"></script>
 
-    <!-- Page level plugins -->
-    <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+<!--    &lt;!&ndash; Page level plugins &ndash;&gt;-->
+<!--    <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>-->
 
-    <!-- Page level custom scripts -->
-    <script th:src="@{/js/demo/chart-area-demo.js}"></script>
-    <script th:src="@{/js/demo/chart-pie-demo.js}"></script>
+<!--    &lt;!&ndash; Page level custom scripts &ndash;&gt;-->
+<!--    <script th:src="@{/js/demo/chart-area-demo.js}"></script>-->
+<!--    <script th:src="@{/js/demo/chart-pie-demo.js}"></script>-->
 
-    <div layout:fragment="footerscript" ></div>
+    <div layout:fragment="footer-script" ></div>
 
 </body>
 
